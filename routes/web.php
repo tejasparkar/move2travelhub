@@ -26,7 +26,17 @@ Route::get('/', function(){
 Route::get('/home', function(){
     return redirect('/package');
 });
+Route::get('/services', function(){
+    return view('services');
+});
 
+Route::get('/aboutus', function(){
+    return view('aboutus');
+});
+
+Route::get('/terms&conditions', function(){
+    return view('terms&conditions');
+});
 Route::resource('/package', PackageController::class)->middleware('auth');
 
 

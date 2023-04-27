@@ -54,6 +54,20 @@
         @enderror
     </div>
     <div class="col">
+    <label for="days/nights">Days/nights</label>
+    <input placeholder="days/nights"  class="form-control" type="text" name="days/nights" value="{{old('days/nights')}}"  id="days/nights">
+    @error('days/nights')
+        <small style="color:red !important" id="" class="form-text text-muted">{{$message}}</small>
+        @enderror
+    </div>
+    <div class="col">
+    <label for="ratings">Ratings</label>
+    <input placeholder="ratings"  class="form-control" type="text" name="ratings" value="{{old('ratings')}}"  id="ratings">
+    @error('ratings')
+        <small style="color:red !important" id="" class="form-text text-muted">{{$message}}</small>
+    @enderror
+    </div>
+    <div class="col">
     <label for="numberOfdaysItenary">No of days</label>
     <select onchange="appendItenaryInputs()" class="form-select" name="numberOfdaysItenary" id="numberOfdaysItenary" value="{{old('numberOfdaysItenary')}}">
         @for($i=1; $i<51;$i++)

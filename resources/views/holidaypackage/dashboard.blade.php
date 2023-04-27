@@ -109,4 +109,38 @@
 @endif
 </div>
 
+<div class="container mt-3">
+  <h3>Leads</h3>
+  <div class="row mt-3">
+    <div class="col table-responsive">
+      <table class="table table-striped table-bordered">
+       <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Number</th>
+        <th>Location</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>No of adults</th>
+        <th>No of childrens</th>
+        <th>Message</th>
+       </thead>
+        @foreach($leads as $lead)
+        <tr>
+          <td>{{$lead->name}}</td>
+          <td>{{$lead->email}}</td>
+          <td>{{$lead->number}}</td>
+          <td>{{$lead->location}}</td>
+          <td>{{$lead->FromDate}}</td>
+          <td>{{$lead->ToDate}}</td>
+          <td>{{$lead->noOfAdults}}</td>
+          <td>{{$lead->noOfChildrens}}</td>
+          <td>{{$lead->message}}</td>
+        </tr>
+        @endforeach
+      </table>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

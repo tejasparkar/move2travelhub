@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use App\Models\Contactus;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 
@@ -14,7 +15,8 @@ class PackageController extends Controller
     public function index()
     {
         $data = Package::all();
-        return view('holidaypackage.dashboard',['packages'=>$data]);
+        $leads = Contactus::latest()->paginate(24);
+        return view('holidaypackage.dashboard',['packages'=>$data , 'leads' =>$leads]);
     }
 
     /**
